@@ -1,0 +1,48 @@
+package com.banco.progresso.mapper;
+
+import com.banco.progresso.entidade.Cliente;
+import com.banco.progresso.entidade.dto.ClienteDTOUpdate;
+import com.banco.progresso.entidade.dto.ClienteDTOUpdate.ClienteDTOUpdateBuilder;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2021-06-14T09:31:11-0300",
+    comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.11 (Amazon.com Inc.)"
+)
+@Component
+public class ClienteDTOUpdateMappersImpl implements ClienteDTOUpdateMappers {
+
+    @Override
+    public Cliente toModel(ClienteDTOUpdate clienteDTOUpdate) {
+        if ( clienteDTOUpdate == null ) {
+            return null;
+        }
+
+        Cliente cliente = new Cliente();
+
+        cliente.setId( clienteDTOUpdate.getId() );
+        cliente.setNomeCompleto( clienteDTOUpdate.getNomeCompleto() );
+        cliente.setTelefone( clienteDTOUpdate.getTelefone() );
+        cliente.setEndereco( clienteDTOUpdate.getEndereco() );
+
+        return cliente;
+    }
+
+    @Override
+    public ClienteDTOUpdate fromDTO(Cliente cliente) {
+        if ( cliente == null ) {
+            return null;
+        }
+
+        ClienteDTOUpdateBuilder clienteDTOUpdate = ClienteDTOUpdate.builder();
+
+        clienteDTOUpdate.id( cliente.getId() );
+        clienteDTOUpdate.nomeCompleto( cliente.getNomeCompleto() );
+        clienteDTOUpdate.telefone( cliente.getTelefone() );
+        clienteDTOUpdate.endereco( cliente.getEndereco() );
+
+        return clienteDTOUpdate.build();
+    }
+}
