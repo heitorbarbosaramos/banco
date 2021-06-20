@@ -7,7 +7,6 @@ import com.banco.progresso.service.utils.ValidaDocumentos;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.util.List;
 

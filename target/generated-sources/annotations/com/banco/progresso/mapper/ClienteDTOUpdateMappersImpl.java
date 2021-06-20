@@ -2,13 +2,12 @@ package com.banco.progresso.mapper;
 
 import com.banco.progresso.entidade.Cliente;
 import com.banco.progresso.entidade.dto.ClienteDTOUpdate;
-import com.banco.progresso.entidade.dto.ClienteDTOUpdate.ClienteDTOUpdateBuilder;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-06-14T09:31:11-0300",
+    date = "2021-06-19T21:45:53-0300",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.11 (Amazon.com Inc.)"
 )
 @Component
@@ -36,13 +35,13 @@ public class ClienteDTOUpdateMappersImpl implements ClienteDTOUpdateMappers {
             return null;
         }
 
-        ClienteDTOUpdateBuilder clienteDTOUpdate = ClienteDTOUpdate.builder();
+        ClienteDTOUpdate clienteDTOUpdate = new ClienteDTOUpdate();
 
-        clienteDTOUpdate.id( cliente.getId() );
-        clienteDTOUpdate.nomeCompleto( cliente.getNomeCompleto() );
-        clienteDTOUpdate.telefone( cliente.getTelefone() );
-        clienteDTOUpdate.endereco( cliente.getEndereco() );
+        clienteDTOUpdate.setId( cliente.getId() );
+        clienteDTOUpdate.setNomeCompleto( cliente.getNomeCompleto() );
+        clienteDTOUpdate.setTelefone( cliente.getTelefone() );
+        clienteDTOUpdate.setEndereco( cliente.getEndereco() );
 
-        return clienteDTOUpdate.build();
+        return clienteDTOUpdate;
     }
 }
